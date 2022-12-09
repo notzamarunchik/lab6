@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.7", "3.8", "3.9", "3.10"]
+        python-version: ["3.8"]
 
     steps:
       - uses: actions/checkout@v3
@@ -20,7 +20,7 @@ jobs:
           pip install coverage
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Test
-        run: coverage run test.py
+        run: coverage run tests.py
   build_and_test:
     runs-on: ubuntu-latest
     steps:
