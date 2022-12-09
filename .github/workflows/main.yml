@@ -26,9 +26,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: npm install, build, and test
+      - name: install, build, and test
         run: |
-          npm install
           pip install pyinstaller
           pyinstaller --onefile calculator.py
       - name: Archive production artifacts
